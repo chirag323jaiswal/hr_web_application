@@ -1,0 +1,619 @@
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>HR Application</title>
+<script>
+function validateForm(frm)
+{
+var title=frm.title.value.trim();
+var titleErrorSection=document.getElementById('titleErrorSection');
+titleErrorSection.innerHTML="";
+if(title.length==0)
+{
+titleErrorSection.innerHTML="Required";
+frm.title.focus();
+return false;
+}
+return true;
+}
+function cancelAddition()
+{
+document.getElementById('cancelAddition').submit();
+}
+</script>
+</head>
+<body>
+<!-- Main container starts here -->
+<div style='width:90hw;height:auto;border:1px solid black;'>
+<!-- Header section starts here -->
+<div style='width:90hw;height:auto;margin:5px;border:1px solid black;'>
+<!-- Logo -->
+<div style='padding:3px;'><a href='/styleone/index.html'><img src='images/logo.png' style='float:left;'></a></div>
+<!-- Brand Name -->
+<div style='margin-top:7px;margin-bottom:7px;font-size:24pt;'>Thinking Machines</div>
+</div> <!-- Header section ends here -->
+<!-- content pane starts here -->
+<div style='width:90hw;height:auto;margin:5px;border:1px solid white;'>
+<!-- left content pane starts here -->
+<div style='height:65vh;margin:5px;padding:5px;border:1px solid black;float:left;'>
+<a href='/styleone/designationsView'>Designations</a><br>
+<a href='/styleone/employeesView'>Employees</a><br>
+<a href='/styleone/index.html'>Home</a>
+</div> <!-- left content pane ends here -->
+<!-- right content pane starts here-->
+<div style='height:65vh;margin:5px 5px 5px 105px;padding:5px;border:1px solid black;'>
+<h2>Designation (Add Module)</h2>
+<form action='/styleone/addDesignation' onsubmit='return validateForm(this)'>
+Designation
+<input type='text' id='title' name='title' maxlength=35 size=36 autofocus>
+<span id='titleErrorSection' style='color:red;'></span><br>
+<table>
+<tr>
+<td><button type='submit'>Add</button></td>
+</form>
+<td><button type='button' onclick='javascript:cancelAddition()'>Cancel</td>
+</tr>
+</table>
+<form id='cancelAddition' action='/styleone/designationsView'>
+</form>
+</div> <!-- right content pane ends here-->
+</div> <!-- content pane ends here -->
+<!-- footer starts here -->
+<div style='width:90hw;height:auto;margin:5px 5px 0px 5px;padding:5px;text-align:center;border:1px solid white;'> 
+&copy Thinking Machines 2020
+</div>  <!-- footer ends here -->
+</div> <!-- Main container ends here -->
+</body>
+</html>
+
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>HR Application</title>
+<script>
+function validateForm(frm)
+{
+var firstInvalidComponent=null;
+var valid=false;
+var name=frm.name.value.trim();
+var nameErrorSection=document.getElementById("nameErrorSection");
+nameErrorSection.innerHTML="";
+if(name.length==0)
+{
+nameErrorSection.innerHTML='Name required';
+valid=false;
+firstInvalidComponent=frm.name;
+}
+var designationCode=frm.designationCode.value;
+var designationCodeErrorSection=document.getElementById("designationCodeErrorSection");
+designationCodeErrorSection.innerHTML="";
+if(designationCode==-1)
+{
+designationCodeErrorSection.innerHTML="Designation required";
+valid=false;
+if(firstInvalidComponent==null) firstInvalidComponent=frm.designationCode;
+}
+var dateOfBirth=frm.dateOfBirth.value.trim();
+var dateOfBirthErrorSection=document.getElementById("dateOfBirthErrorSection");
+dateOfBirthErrorSection.innerHTML="";
+if(dateOfBirth.length==0)
+{
+dateOfBirthErrorSection.innerHTML="Date of birth required";
+valid=false;
+if(firstInvalidComponent==null) firstInvalidComponent=frm.dateOfBirth;
+}
+var genderErrorSection=document.getElementById('genderErrorSection');
+genderErrorSection.innerHTML="";
+if(frm.gender[0].checked==false && frm.gender[1].checked==false)
+{
+genderErrorSection.innerHTML="Select gender";
+valid=false;
+}
+var basicSalary=frm.basicSalary.value.trim();
+var basicSalaryErrorSection=document.getElementById("basicSalaryErrorSection");
+basicSalaryErrorSection.innerHTML="";
+if(basicSalary.length==0)
+{
+basicSalaryErrorSection.innerHTML="Salary required";
+valid=false;
+if(firstInvalidComponent==null) firstInvalidComponent=frm.basicSalary;
+}
+else
+{
+var isBasicSalaryValid;
+isBasicSalaryValid=true;
+var v='0123456789.';
+var e;
+e=0;
+while(e<basicSalary.length)
+{
+if(v.indexOf(basicSalary.charAt(e))==-1)
+{
+basicSalaryErrorSection.innerHTML="Invalid salary";
+valid=false;
+if(firstInvalidComponent==null) firstInvalidComponent=frm.basicSalary;
+isBasicSalaryValid=false;
+break;
+}
+e++;
+}
+if(isBasicSalaryValid)
+{
+var dot=basicSalary.indexOf(".");
+if(dot!=-1)
+{
+var numberOfFractions=basicSalary.length-(dot+1);
+if(numberOfFractions>2)
+{
+basicSalaryErrorSection.innerHTML="Invalid salary";
+valid=false;
+if(firstInvalidComponent==null) firstInvalidComponent=frm.basicSalary;
+}
+}
+}
+}
+var panNumber=frm.panNumber.value.trim();
+var panNumberErrorSection=document.getElementById("panNumberErrorSection");
+panNumberErrorSection.innerHTML="";
+if(panNumber.length==0)
+{
+panNumberErrorSection.innerHTML="PAN number required";
+valid=false;
+if(firstInvalidComponent==null) firstInvalidComponent=frm.panNumber;
+}
+var aadharCardNumber=frm.aadharCardNumber.value.trim();
+var aadharCardNumberErrorSection=document.getElementById("aadharCardNumberErrorSection");
+aadharCardNumberErrorSection.innerHTML="";
+if(aadharCardNumber.length==0)
+{
+aadharCardNumberErrorSection.innerHTML="Aadhar card number required";
+valid=false;
+if(firstInvalidComponent==null) firstInvalidComponent=frm.aadharCardNumber;
+}
+if(!valid) firstInvalidComponent.focus();
+return valid;
+}
+function cancelAddition()
+{
+document.getElementById("cancelAdditionForm").submit();
+}
+</script>
+</head>
+<body>
+<!-- Main container starts here -->
+<div style='width:90hw;height:auto;border:1px solid black;'>
+<!-- Header section starts here -->
+<div style='width:90hw;height:auto;margin:5px;border:1px solid black;'>
+<!-- Logo -->
+<div style='padding:3px;'><a href='/styleone/index.html'><img src='images/logo.png' style='float:left;'></a></div>
+<!-- Brand Name -->
+<div style='margin-top:7px;margin-bottom:7px;font-size:24pt;'>Thinking Machines</div>
+</div> <!-- Header section ends here -->
+<!-- content pane starts here -->
+<div style='width:90hw;height:auto;margin:5px;border:1px solid white;'>
+<!-- left content pane starts here -->
+<div style='height:65vh;margin:5px;padding:5px;border:1px solid black;float:left;'>
+<a href='/styleone/designationsView'>Designations</a><br>
+<a href='/styleone/employeesView'>Employees</a><br>
+<a href='/styleone/index.html'>Home</a>
+</div> <!-- left content pane ends here -->
+<!-- right content pane starts here-->
+<div style='height:65vh;margin:5px 5px 5px 105px;padding:5px;border:1px solid black;'>
+<h2>Employee (Add Module)</h2>
+<form method='post' action='/styleone/addEmployee' onsubmit='return validateForm(this)'>
+<table>
+<tr>
+<td>Name</td>
+<td><input type='text' id='name' name='name' maxlength='50' size='51'><span id='nameErrorSection' style='color:red;'></span></td>
+</tr>
+<tr>
+<td>Designation</td>
+<td><select id='designationCode' name='designationCode'>
+<option value='-1'>&lt;Select Designation&gt;</option>
+<option value='1'>Programmer</option>
+<option value='2'>Sales Manager</option>
+<option value='3'>Product Designer</option>
+<option value='4'>Software Architect</option>
+</select>
+<span id='designationCodeErrorSection' style='color:red;'></span>
+</td>
+</tr>
+<tr>
+<td>Date of birth </td>
+<td><input type='date' id='dateOfBirth' name='dateOfBirth'><span id='dateOfBirthErrorSection' style='color:red;'></span></td>
+</tr>
+<tr>
+<td>Gender</td>
+<td>
+<input type='radio' id='male' name='gender' value='M'> Male
+<input type='radio' id='female' name='gender' value='F'> Female
+<span id='genderErrorSection' style='color:red;'></span>
+</td>
+</tr>
+<tr>
+<td>Indian ?</td>
+<td><input type='checkbox' id='isIndian' name='isIndian'><span id='isIndianErrorSection' style='color:red;'></span></td>
+</tr>
+<tr>
+<td>Basic salary</td>
+<td><input type='text' style='text-align:right' id='basicSalary' name='basicSalary' maxlength='10' size='11'><span id='basicSalaryErrorSection' style='color:red;'></span>
+</td>
+</tr>
+<tr>
+<td>PAN number</td>
+<td><input type='text' id='panNumber' name='panNumber' maxlength='15' size='16'><span id='panNumberErrorSection' style='color:red;'></span>
+</td>
+</tr>
+<tr>
+<td>Aadhar card number</td>
+<td><input type='text' id='aadharCardNumber' name='aadharCardNumber' maxlength='15' size='16'><span id='aadharCardNumberErrorSection' style='color:red;'></span>
+</td>
+</tr>
+<tr>
+<td style='text-align:right;'><button type='submit'>Add</button></td>
+<td><button type='button' onclick='cancelAddition()'>Cancel</button></td>
+</tr>
+</table>
+</form>
+<form id='cancelAdditionForm' action='/styleone/employeesView'>
+</form>
+</div> <!-- right content pane ends here-->
+</div> <!-- content pane ends here -->
+<!-- footer starts here -->
+<div style='width:90hw;height:auto;margin:5px 5px 0px 5px;padding:5px;text-align:center;border:1px solid white;'> 
+&copy Thinking Machines 2020
+</div>  <!-- footer ends here -->
+</div> <!-- Main container ends here -->
+</body>
+</html>
+
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>HR Application</title>
+</head>
+<body>
+<!-- Main container starts here -->
+<div style='width:90hw;height:auto;border:1px solid black;'>
+<!-- Header section starts here -->
+<div style='width:90hw;height:auto;margin:5px;border:1px solid black;'>
+<!-- Logo -->
+<div style='padding:3px;'><img src='images/logo.png' style='float:left;'></div>
+<!-- Brand Name -->
+<div style='margin-top:7px;margin-bottom:7px;font-size:24pt;'>Thinking Machines</div>
+</div> <!-- Header section ends here -->
+<!-- content pane starts here -->
+<div style='width:90hw;height:auto;margin:5px;border:1px solid white;'>
+<!-- left content pane starts here -->
+<div style='height:65vh;margin:5px;padding:5px;border:1px solid black;float:left;'>
+<a href='/styleone/designationsView'>Designations</a><br>
+<a href='/styleone/employeesView'>Employees</a>
+</div> <!-- left content pane ends here -->
+<!-- right content pane starts here-->
+<div style='height:65vh;margin:5px 5px 5px 105px;padding:5px;border:1px solid black;overflow:scroll;'>
+<h2>Designations<h2>
+<table border=1>
+<thead>
+<tr>
+<th colspan='4' style='text-align:right;padding:5px;'><a href='/styleone/AddDesignation.html'>Add New Designation</a></th>
+</tr>
+<tr>
+<th style='width:70px;text-align:center;'>Sno.</th>
+<th style='width:160px;text-align:center;'>Designation</th>
+<th style='width:70px;text-align:center;'>Edit</th>
+<th style='width:90px;text-align:center;'>Delete</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style='text-align:right;'>1.</td>
+<td>Manager</td>
+<td><a href='/styleone/editDesignation?code=1' style='text-align:center;'>Edit</a></td>
+<td><a href='/styleone/confirmDeleteDesignation?code=1' style='text-align:center;'>Delete</a></td>
+</tr>
+<tr>
+<td style='text-align:right;'>2.</td>
+<td>Programmer</td>
+<td><a href='/styleone/editDesignation?code=2' style='text-align:center;'>Edit</a></td>
+<td><a href='/styleone/confirmDeleteDesignation?code=2' style='text-align:center;'>Delete</a></td>
+</tr>
+</tbody>
+</table>
+</div> <!-- right content pane ends here-->
+</div> <!-- content pane ends here -->
+<!-- footer starts here -->
+<div style='width:90hw;height:auto;margin:5px 5px 0px 5px;padding:5px;text-align:center;border:1px solid white;'> 
+&copy Thinking Machines
+</div>  <!-- footer ends here -->
+</div> <!-- Main container ends here -->
+</body>
+</html>
+
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>HR Application</title>
+<script>
+function Employee()
+{
+this.employeeId="";
+this.name="";
+this.designationCode=0;
+this.designation="";
+this.dateOfBirth="";
+this.gender="";
+this.isIndian=false;
+this.basicSalary="";
+this.panNumber="";
+this.aadharCardNumber="";
+}
+var employees=[];
+var employee=new Employee();
+employee.employeeId="A100001";
+employee.name="Rakesh Sharma";
+employee.designationCode=1;
+employee.designation="Programmer";
+employee.dateOfBirth="12/01/1999";
+employee.gender="M";
+employee.isIndian="true";
+employee.basicSalary="40000";
+employee.panNumber="AVDF1223";
+employee.aadharCardNumber="PQEW2323";
+employees[0]=employee;
+employee=new Employee();
+employee.employeeId="A100002";
+employee.name="Sheela Gupta";
+employee.designationCode=2;
+employee.designation="Sales Manager";
+employee.dateOfBirth="10/04/2001";
+employee.gender="M";
+employee.isIndian="true";
+employee.basicSalary="600000";
+employee.panNumber="RERF3223";
+employee.aadharCardNumber="UIER2323";
+employees[1]=employee;
+var selectedRow=null;
+function selectEmployee(row,employeeId)
+{
+if(selectedRow==row) return;
+if(selectedRow!=null)
+{
+selectedRow.style.background="white";
+selectedRow.style.color="black";
+}
+row.style.background="#AAAAAA";
+row.style.color="white";
+selectedRow=row;
+var e;
+for(e=0;e<employees.length;e++)
+{
+if(employees[e].employeeId==employeeId)
+{
+break;
+}
+}
+emp=employees[e];
+document.getElementById('detailPanel_employeeId').innerHTML=emp.employeeId;
+document.getElementById('detailPanel_name').innerHTML=emp.name;
+document.getElementById('detailPanel_designation').innerHTML=emp.designation;
+document.getElementById('detailPanel_dateOfBirth').innerHTML=emp.dateOfBirth;
+document.getElementById('detailPanel_gender').innerHTML=emp.gender;
+if(emp.isIndian)
+{
+document.getElementById('detailPanel_isIndian').innerHTML="Yes";
+}
+else
+{
+document.getElementById('detailPanel_isIndian').innerHTML="No";
+}
+document.getElementById('detailPanel_basicSalary').innerHTML=emp.basicSalary;
+document.getElementById('detailPanel_panNumber').innerHTML=emp.panNumber;
+document.getElementById('detailPanel_aadharCardNumber').innerHTML=emp.aadharCardNumber;
+}
+</script>
+</head>
+<body>
+<!-- Main container starts here -->
+<div style='width:90hw;height:auto;border:1px solid black;'>
+<!-- Header section starts here -->
+<div style='width:90hw;height:auto;margin:5px;border:1px solid black;'>
+<!-- Logo -->
+<div style='padding:3px;'><a href='/styleone/index.html'><img src='images/logo.png' style='float:left;'></a></div>
+<!-- Brand Name -->
+<div style='margin-top:7px;margin-bottom:7px;font-size:24pt;'>Thinking Machines</div>
+</div> <!-- Header section ends here -->
+<!-- content pane starts here -->
+<div style='width:90hw;height:auto;margin:5px;border:1px solid white;'>
+<!-- left content pane starts here -->
+<div style='height:65vh;margin:5px;padding:5px;border:1px solid black;float:left;'>
+<a href='/styleone/designationsView'>Designations</a><br>
+<b>Employees</b><br>
+<a href='/styleone/index.html'>Home</a>
+</div> <!-- left content pane ends here -->
+<!-- right content pane starts here-->
+<div style='height:65vh;margin:5px 5px 5px 105px;padding:5px;border:1px solid black;'>
+<h3>Employees<h3>
+<div style='height:33vh;margin:5px 5px 5px 5px;padding:5px;border:1px solid black;overflow:scroll;'> <!-- upper right content pane ends here -->
+<table border=1 style='width:100%'>
+<thead style='font-weight:500;font-size:large;'>
+<tr>
+<th colspan='6' style='text-align:right;padding:5px;'><a href='/styleone/getEmployeeAddForm'>Add Employee</a></th>
+</tr>
+<tr>
+<th style='width:20px;text-align:center;'>Sno.</th>
+<th style='width:100px;text-align:center;'>Id</th>
+<th style='width:200px;text-align:center;'>Name</th>
+<th style='width:200px;text-align:center;'>Designation</th>
+<th style='width:90px;text-align:center;'>Edit</th>
+<th style='width:90px;text-align:center;'>Delete</th>
+</tr>
+</thead>
+<tbody style='font-weight:100;font-size:large;'>
+<tr style='cursor:pointer;' onclick='selectEmployee(this,"A100001")'>
+<td style='text-align:right;'>1.</td>
+<td>A100001</td>
+<td>Rakesh Sharma</td>
+<td>Programmer</td>
+<td style='text-align:center;'><a href='/styleone/editEmployee?employeeId=7'>Edit</a></td>
+<td style='text-align:center;'><a href='/styleone/confirmDeleteEmployee?employeeId=7'>Delete</a></td>
+</tr>
+<tr style='cursor:pointer;' onclick='selectEmployee(this,"A100002")'>
+<td style='text-align:right;'>2.</td>
+<td>A100002</td>
+<td>Sheela Gupta</td>
+<td>Sales Manager</td>
+<td style='text-align:center;'><a href='/styleone/editEmployee?employeeId=7'>Edit</a></td>
+<td style='text-align:center;'><a href='/styleone/confirmDeleteEmployee?employeeId=7'>Delete</a></td>
+</tr>
+</tbody>
+</table>
+</div> <!-- upper right content pane ends here -->
+<div style='height:19vh;margin:9px 5px 5px 5px;padding:5px;border:1px solid black;'> <!-- lower right content pane starts here -->
+<label style='background:#AAAAAA;color:white;padding-left:5px;padding-right:5px;'>Details</label>
+<table style='font-weight:100;width:100%;'>
+<tr>
+<td>Employee Id : <span id='detailPanel_employeeId' style='margin-right:30px;'></span></td>
+<td>Name : <span id='detailPanel_name' style='margin-right:30px;'></span></td>
+<td>Designation : <span id='detailPanel_designation' style='margin-right:30px;'></span></td>
+</tr>
+<tr>
+<td>Date Of birth : <span id='detailPanel_dateOfBirth' style='margin-right:30px;'></span></td>
+<td>Gender : <span id='detailPanel_gender' style='margin-right:30px;'></span></td>
+<td>Is Indian : <span id='detailPanel_isIndian' style='margin-right:30px;'></span></td>
+</tr>
+<tr>
+<td>Basic salary : <span id='detailPanel_basicSalary' style='margin-right:30px;'></span></td>
+<td>PAN Number : <span id='detailPanel_panNumber' style='margin-right:30px;'></span></td>
+<td>Aadhar Card Number : <span id='detailPanel_aadharCardNumber' style='margin-right:30px;'></span></td>
+</tr>
+</table>
+</div> <!-- lower right content pane ends here -->
+
+</div> <!-- right content pane ends here-->
+</div> <!-- content pane ends here -->
+<!-- footer starts here -->
+<div style='width:90hw;height:auto;margin:5px 5px 0px 5px;padding:5px;text-align:center;border:1px solid white;'>
+&copy Thinking Machines 2020
+</div>  <!-- footer ends here -->
+</div> <!-- Main container ends here -->
+</body>
+</html>
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>HR Application</title>
+</head>
+<body>
+<!-- Main container starts here -->
+<div style='width:90hw;height:auto;border:1px solid black;'>
+<!-- Header section starts here -->
+<div style='width:90hw;height:auto;margin:5px;border:1px solid black;'>
+<!-- Logo -->
+<div style='padding:3px;'><a href='/styleone/index.html'><img src='images/logo.png' style='float:left;'></a></div>
+<!-- Brand Name -->
+<div style='margin-top:7px;margin-bottom:7px;font-size:24pt;'>Thinking Machines</div>
+</div> <!-- Header section ends here -->
+<!-- content pane starts here -->
+<div style='width:90hw;height:auto;margin:5px;border:1px solid white;'>
+<!-- left content pane starts here -->
+<div style='height:65vh;margin:5px;padding:5px;border:1px solid black;float:left;'>
+<a href='/styleone/designationsView'>Designations</a><br>
+<a href='/styleone/employeesView'>Employees</a>
+</div> <!-- left content pane ends here -->
+<!-- right content pane starts here-->
+<div style='height:65vh;margin:5px 5px 5px 105px;padding:5px;border:1px solid black;'>
+<center>
+<h1>Welcome</h1>
+</center>
+</div> <!-- right content pane ends here-->
+</div> <!-- content pane ends here -->
+<!-- footer starts here -->
+<div style='width:90hw;height:auto;margin:5px 5px 0px 5px;padding:5px;text-align:center;border:1px solid white;'> 
+&copy Thinking Machines 2020
+</div>  <!-- footer ends here -->
+</div> <!-- Main container ends here -->
+</body>
+</html>
+
+<!DOCTYPE HTML>
+<html lang='en'>
+<head>
+<meta charset='utf-8'>
+<title>HR Application</title>
+</head>
+<body>
+<!-- Main container starts here -->
+<div style='width:90hw;height:auto;border:1px solid black;'>
+<!-- Header section starts here -->
+<div style='width:90hw;height:auto;margin:5px;border:1px solid black;'>
+<!-- Logo -->
+<div style='padding:3px;'><a href='/styleone/index.html'><img src='images/logo.png' style='float:left;'></a></div>
+<!-- Brand Name -->
+<div style='margin-top:7px;margin-bottom:7px;font-size:24pt;'>Thinking Machines</div>
+</div> <!-- Header section ends here -->
+<!-- content pane starts here -->
+<div style='width:90hw;height:auto;margin:5px;border:1px solid white;'>
+<!-- left content pane starts here -->
+<div style='height:65vh;margin:5px;padding:5px;border:1px solid black;float:left;'>
+<a href='/styleone/designationsView'>Designations</a><br>
+<a href='/styleone/employeesView'>Employees</a>
+</div> <!-- left content pane ends here -->
+<!-- right content pane starts here-->
+<div style='height:65vh;margin:5px 5px 5px 105px;padding:5px;border:1px solid black;'>
+<center>
+<h1>Welcome</h1>
+</center>
+</div> <!-- right content pane ends here-->
+</div> <!-- content pane ends here -->
+<!-- footer starts here -->
+<div style='width:90hw;height:auto;margin:5px 5px 0px 5px;padding:5px;text-align:center;border:1px solid white;'> 
+&copy Thinking Machines 2020
+</div>  <!-- footer ends here -->
+</div> <!-- Main container ends here -->
+</body>
+</html>
+
+pw.println("<!DOCTYPE HTML>");
+pw.println("<html lang='en'>");
+pw.println("<head>");
+pw.println("<meta charset='utf-8'>");
+pw.println("<title>HR Application</title>");
+pw.println("</head>");
+pw.println("<body>");
+pw.println("<!-- Main container starts here -->");
+pw.println("<div style='width:90hw;height:auto;border:1px solid black;'>");
+pw.println("<!-- Header section starts here -->");
+pw.println("<div style='width:90hw;height:auto;margin:5px;border:1px solid black;'>");
+pw.println("<!-- Logo -->");
+pw.println("<div style='padding:3px;'><a href='/styleone/index.html'><img src='images/logo.png' style='float:left;'></a></div>");
+pw.println("<!-- Brand Name -->");
+pw.println("<div style='margin-top:7px;margin-bottom:7px;font-size:24pt;'>Thinking Machines</div>");
+pw.println("</div> <!-- Header section ends here -->");
+pw.println("<!-- content pane starts here -->");
+pw.println("<div style='width:90hw;height:auto;margin:5px;border:1px solid white;'>");
+pw.println("<!-- left content pane starts here -->");
+pw.println("<div style='height:65vh;margin:5px;padding:5px;border:1px solid black;float:left;'>");
+pw.println("<a href='/styleone/designationsView'>Designations</a><br>");
+pw.println("<a href='/styleone/employeesView'>Employees</a>");
+pw.println("</div> <!-- left content pane ends here -->");
+pw.println("<!-- right content pane starts here-->");
+pw.println("<div style='height:65vh;margin:5px 5px 5px 105px;padding:5px;border:1px solid black;'>");
+pw.println("<center>");
+pw.println("<h1>Welcome</h1>");
+pw.println("</center>");
+pw.println("</div> <!-- right content pane ends here-->");
+pw.println("</div> <!-- content pane ends here -->");
+pw.println("<!-- footer starts here -->");
+pw.println("<div style='width:90hw;height:auto;margin:5px 5px 0px 5px;padding:5px;text-align:center;border:1px solid white;'> ");
+pw.println("&copy Thinking Machines 2020");
+pw.println("</div>  <!-- footer ends here -->");
+pw.println("</div> <!-- Main container ends here -->");
+pw.println("</body>");
+pw.println("</html>");
+pw.println("");
+

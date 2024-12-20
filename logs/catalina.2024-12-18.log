@@ -1,0 +1,80 @@
+18-Dec-2024 18:17:31.611 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/9.0.82
+18-Dec-2024 18:17:31.616 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Oct 11 2023 13:15:08 UTC
+18-Dec-2024 18:17:31.616 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 9.0.82.0
+18-Dec-2024 18:17:31.616 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+18-Dec-2024 18:17:31.616 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+18-Dec-2024 18:17:31.616 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+18-Dec-2024 18:17:31.616 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\jdk14
+18-Dec-2024 18:17:31.616 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           14.0.2+12-46
+18-Dec-2024 18:17:31.616 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+18-Dec-2024 18:17:31.616 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\tomcat9
+18-Dec-2024 18:17:31.616 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\tomcat9
+18-Dec-2024 18:17:31.637 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+18-Dec-2024 18:17:31.637 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+18-Dec-2024 18:17:31.637 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+18-Dec-2024 18:17:31.637 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+18-Dec-2024 18:17:31.637 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+18-Dec-2024 18:17:31.637 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\tomcat9\conf\logging.properties
+18-Dec-2024 18:17:31.644 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+18-Dec-2024 18:17:31.644 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+18-Dec-2024 18:17:31.644 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+18-Dec-2024 18:17:31.644 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+18-Dec-2024 18:17:31.644 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\tomcat9
+18-Dec-2024 18:17:31.644 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\tomcat9
+18-Dec-2024 18:17:31.644 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\tomcat9\temp
+18-Dec-2024 18:17:31.652 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The Apache Tomcat Native library which allows using OpenSSL was not found on the java.library.path: [C:\jdk14\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Users\Chirag Jaiswal\AppData\Local\Programs\Python\Python312\Scripts\;C:\Users\Chirag Jaiswal\AppData\Local\Programs\Python\Python312\;C:\Users\Chirag Jaiswal\AppData\Local\Microsoft\WindowsApps;C:\mingw64\bin;C:\jdk14\bin;C:\gradle\bin;C:\tomcat9\bin;C:\maven\bin;C:\mingw64n\bin;C:\Users\Chirag Jaiswal\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\JavaProjects\hr\pl;;.]
+18-Dec-2024 18:17:31.894 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+18-Dec-2024 18:17:31.941 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [604] milliseconds
+18-Dec-2024 18:17:31.995 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+18-Dec-2024 18:17:31.995 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/9.0.82]
+18-Dec-2024 18:17:32.005 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\ajax2]
+18-Dec-2024 18:17:32.942 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+18-Dec-2024 18:17:33.057 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\ajax2] has finished in [1,049] ms
+18-Dec-2024 18:17:33.058 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\backup]
+18-Dec-2024 18:17:33.109 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\backup] has finished in [51] ms
+18-Dec-2024 18:17:33.109 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\docs]
+18-Dec-2024 18:17:33.193 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\docs] has finished in [84] ms
+18-Dec-2024 18:17:33.193 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\examples]
+18-Dec-2024 18:17:35.169 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\examples] has finished in [1,976] ms
+18-Dec-2024 18:17:35.169 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\five]
+18-Dec-2024 18:17:35.266 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\five] has finished in [97] ms
+18-Dec-2024 18:17:35.266 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\four]
+18-Dec-2024 18:17:35.379 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\four] has finished in [113] ms
+18-Dec-2024 18:17:35.379 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\host-manager]
+18-Dec-2024 18:17:35.456 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\host-manager] has finished in [73] ms
+18-Dec-2024 18:17:35.456 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\manager]
+18-Dec-2024 18:17:35.506 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\manager] has finished in [50] ms
+18-Dec-2024 18:17:35.506 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\modal]
+18-Dec-2024 18:17:35.517 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\modal] has finished in [11] ms
+18-Dec-2024 18:17:35.523 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\one]
+18-Dec-2024 18:17:35.557 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\one] has finished in [34] ms
+18-Dec-2024 18:17:35.557 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\ROOT]
+18-Dec-2024 18:17:35.589 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\ROOT] has finished in [32] ms
+18-Dec-2024 18:17:35.589 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\something]
+18-Dec-2024 18:17:36.545 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+18-Dec-2024 18:17:36.557 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\something] has finished in [968] ms
+18-Dec-2024 18:17:36.557 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\styleone]
+18-Dec-2024 18:17:38.224 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+18-Dec-2024 18:17:38.232 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\styleone] has finished in [1,675] ms
+18-Dec-2024 18:17:38.232 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\stylethree]
+18-Dec-2024 18:17:39.652 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+18-Dec-2024 18:17:39.657 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\stylethree] has finished in [1,425] ms
+18-Dec-2024 18:17:39.657 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\stylethreecomma]
+18-Dec-2024 18:17:41.046 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+18-Dec-2024 18:17:41.054 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\stylethreecomma] has finished in [1,394] ms
+18-Dec-2024 18:17:41.054 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\stylethree_uncomplete]
+18-Dec-2024 18:17:41.113 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\stylethree_uncomplete] has finished in [59] ms
+18-Dec-2024 18:17:41.118 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\styletwo]
+18-Dec-2024 18:17:42.450 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+18-Dec-2024 18:17:42.459 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\styletwo] has finished in [1,342] ms
+18-Dec-2024 18:17:42.459 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\three]
+18-Dec-2024 18:17:42.616 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\three] has finished in [157] ms
+18-Dec-2024 18:17:42.616 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\TMJRock]
+18-Dec-2024 18:17:43.528 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+18-Dec-2024 18:17:43.536 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\TMJRock] has finished in [920] ms
+18-Dec-2024 18:17:43.536 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\two]
+18-Dec-2024 18:17:43.673 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\two] has finished in [137] ms
+18-Dec-2024 18:17:43.673 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\tomcat9\webapps\vapasone]
+18-Dec-2024 18:17:43.713 INFO [main] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\tomcat9\webapps\vapasone] has finished in [26] ms
+18-Dec-2024 18:17:43.722 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+18-Dec-2024 18:17:43.811 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [11870] milliseconds
